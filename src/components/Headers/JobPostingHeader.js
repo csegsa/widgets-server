@@ -5,7 +5,7 @@ import { Button, Container } from "reactstrap";
 
 // core components
 
-function LandingPageHeader() {
+function JobPostingHeader() {
   let pageHeader = React.createRef();
 
   React.useEffect(() => {
@@ -36,7 +36,7 @@ function LandingPageHeader() {
         <div className="filter" />
         <Container>
           <div className="motto text-center">
-            <h1>Home page</h1>
+            <h1>Job Posting page</h1>
             <h3>Start designing your landing page here.</h3>
             <br />
             <Button
@@ -59,4 +59,4 @@ function LandingPageHeader() {
   );
 }
 
-export default LandingPageHeader;
+export default JobPostingHeader;

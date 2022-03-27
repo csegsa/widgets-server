@@ -9,7 +9,12 @@ import "assets/demo/demo.css?v=1.3.0";
 // pages
 import Index from "views/Index.js";
 import NucleoIcons from "views/NucleoIcons.js";
-import LandingPage from "views/examples/LandingPage.js";
+import LandingPage from "views/homepage/LandingPage";
+import LoginPage from "views/userlogin/LoginPage";
+import JobPostings from "views/jobs/JobPostings";
+import EventsPage from "views/events/EventsPage";
+
+//Examples modules - To be removed later.
 import ProfilePage from "views/examples/ProfilePage.js";
 import RegisterPage from "views/examples/RegisterPage.js";
 // others
@@ -17,14 +22,29 @@ import RegisterPage from "views/examples/RegisterPage.js";
 ReactDOM.render(
   <BrowserRouter>
     <Switch>
+      <Route
+        path="/home"
+        render={(props) => <LandingPage {...props} />}
+      />
+      <Route
+        path="/login"
+        render={(props) => <LoginPage {...props} />}
+      />
+      <Route
+        path="/events"
+        render={(props) => <EventsPage {...props} />}
+      />
+      <Route
+        path="/jobs"
+        render={(props) => <JobPostings {...props} />}
+      />
+
+
+      {/* Example routes - To be removed later */}
       <Route path="/index" render={(props) => <Index {...props} />} />
       <Route
         path="/nucleo-icons"
         render={(props) => <NucleoIcons {...props} />}
-      />
-      <Route
-        path="/home"
-        render={(props) => <LandingPage {...props} />}
       />
       <Route
         path="/profile-page"
