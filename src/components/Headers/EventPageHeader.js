@@ -1,7 +1,7 @@
 import React from "react";
 
 // reactstrap components
-
+import { Container } from "reactstrap";
 // core components
 
 function EventPageHeader() {
@@ -33,6 +33,11 @@ function EventPageHeader() {
         ref={pageHeader}
       >
         <div className="filter" />
+        <Container>
+          <div className="motto text-center">
+            <h1>Events</h1>
+          </div>
+        </Container>
       </div>
     </>
   );
