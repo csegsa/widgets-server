@@ -15,6 +15,8 @@ import {
     Button,
 } from "reactstrap";
 
+import Logo from "../../csegsa.webp" ;
+
 function MainNavbar() {
     const [navbarColor, setNavbarColor] = React.useState("navbar-transparent");
     const [navbarCollapse, setNavbarCollapse] = React.useState(false);
@@ -30,7 +32,7 @@ function MainNavbar() {
                 document.documentElement.scrollTop > 299 ||
                 document.body.scrollTop > 299
             ) {
-                setNavbarColor("");
+                setNavbarColor("bg-danger");
             } else if (
                 document.documentElement.scrollTop < 300 ||
                 document.body.scrollTop < 300
@@ -59,7 +61,7 @@ function MainNavbar() {
                         title="CSEGSA"
                         tag={Link}
                     >
-                        <i className="fa fa-twitter" />
+                        <img src={Logo} style={{width:400}} />
                     </NavbarBrand>
                     <button
                         aria-expanded={navbarCollapse}
@@ -96,7 +98,7 @@ function MainNavbar() {
                         </NavItem>
                         <NavItem>
                             <NavLink to="/home/#contact" tag={Link}>
-                                Contact Us 
+                                Contact Us
                             </NavLink>
                         </NavItem>
                         {/* <NavItem>
@@ -107,11 +109,11 @@ function MainNavbar() {
                         <NavItem>
                             <Button
                                 className="btn-round"
-                                color="danger"
+                                color="info"
                                 to="/login"
                                 tag={Link}
                             >
-                                <i className="nc-icon nc-spaceship"></i>Login
+                                <i className="nc-icon nc-spaceship"></i> Login
                             </Button>
                         </NavItem>
                     </Nav>
