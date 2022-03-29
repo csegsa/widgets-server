@@ -2,7 +2,6 @@ import React from "react";
 
 // reactstrap components
 import {
-  Button,
   Container,
   Row,
   Col,
@@ -26,15 +25,21 @@ function EventsPage() {
   });
   return (
     <>
-      <MainNavbar/>
+      <MainNavbar />
       <EventPageHeader />
-      <div className="main" style={{alignItems:'center'}}>
-        <Col md="6">
-        <FullCalendar
-      plugins={[ dayGridPlugin ]}
-      initialView="dayGridMonth"
-    />
-        </Col>
+      <div className="main">
+        <div className="section text-center">
+          <Container>
+            <Row>
+              <Col md="6">
+                <FullCalendar
+                  plugins={[dayGridPlugin]}
+                  initialView="dayGridMonth"
+                />
+              </Col>
+            </Row>
+          </Container>
+        </div>
       </div>
       <DemoFooter />
     </>

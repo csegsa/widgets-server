@@ -1,8 +1,8 @@
 import React from "react";
 
 // reactstrap components
-import { Button, Container } from "reactstrap";
-
+import { Container } from "reactstrap";
+import backgroundImage from "assets/img/csegsa/Academic.JPG"
 // core components
 
 function LandingPageHeader() {
@@ -27,7 +27,7 @@ function LandingPageHeader() {
       <div
         style={{
           backgroundImage:
-            "url(" + require("../../Academic.JPG").default + ")",
+            "url("+backgroundImage + ")",
         }}
         className="page-header"
         data-parallax={true}

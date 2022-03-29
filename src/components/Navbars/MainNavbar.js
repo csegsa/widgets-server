@@ -15,7 +15,7 @@ import {
     Button,
 } from "reactstrap";
 
-import Logo from "../../csegsa.webp" ;
+import Logo from "../../assets/img/csegsa/csegsa.webp" ;
 
 function MainNavbar() {
     const [navbarColor, setNavbarColor] = React.useState("navbar-transparent");
@@ -61,7 +61,7 @@ function MainNavbar() {
                         title="CSEGSA"
                         tag={Link}
                     >
-                        <img src={Logo} style={{width:400}} />
+                        <img src={Logo} alt={"csegsa_logo"} style={{width:400}} />
                     </NavbarBrand>
                     <button
                         aria-expanded={navbarCollapse}

@@ -13,14 +13,14 @@
     "fast-glob": "^3.2.11",
     "lodash": "^4.17.21",
     "moment": "2.29.1",
-    "node-sass": "6.0.0",
+    "node-sass": "^7.0.1",
     "nouislider": "14.6.4",
     "react": "17.0.2",
     "react-datetime": "^3.1.1",
     "react-dom": "17.0.2",
     "react-router": "5.2.0",
     "react-router-dom": "5.2.0",
-    "react-scripts": "4.0.3",
+    "react-scripts": "^5.0.0",
     "reactstrap": "8.9.0"
   },
   "scripts": {
@@ -54,13 +54,13 @@
   },
   "devDependencies": {
     "bootstrap": "4.6.0",
-    "gulp": "4.0.2",
+    "gulp": "^3.9.1",
     "gulp-append-prepend": "1.0.8"
   },
   "description": "CSEGSA Portal - Official Computer Science and Engineering Graduate Student Association portal.",
   "main": "src/assets/scss/paper-kit.scss",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/creativetimofficial/paper-kit-react.git"
+    "url": "git+https://github.com/csegsa/widgets-server.git"
   }
 }
