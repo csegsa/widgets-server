@@ -19,7 +19,10 @@ import ProfilePage from "views/examples/ProfilePage.js";
 import RegisterPage from "views/examples/RegisterPage.js";
 // others
 
+import { auth } from './views/userlogin/Firebase';
+
 ReactDOM.render(
+
   <BrowserRouter>
     <Switch>
       <Route
@@ -38,7 +41,6 @@ ReactDOM.render(
         path="/jobs"
         render={(props) => <JobPostings {...props} />}
       />
-
 
       {/* Example routes - To be removed later */}
       <Route path="/index" render={(props) => <Index {...props} />} />

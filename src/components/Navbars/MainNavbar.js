@@ -1,5 +1,7 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, Redirect, useHistory } from "react-router-dom";
+import { auth, signOutOfGoogle } from '../../views/userlogin/Firebase';
+import { useAuthState } from "react-firebase-hooks/auth";
 // nodejs library that concatenates strings
 import classnames from "classnames";
 
@@ -26,6 +28,19 @@ function MainNavbar() {
         document.documentElement.classList.toggle("nav-open");
     };
 
+    const [user, loading, error] = useAuthState(auth);
+    const [authenticated, setAuthenticated] = React.useState(false);
+    const [loginText, setLoginText] = React.useState("Login");
+
+    React.useEffect(() => {
+        if (user) {
+            setAuthenticated(true);
+            setLoginText("Log Out");
+        } else {
+            setLoginText("Log In");
+        }
+    }, [user]);
+
     React.useEffect(() => {
         const updateNavbarColor = () => {
             if (
@@ -47,6 +62,13 @@ function MainNavbar() {
             window.removeEventListener("scroll", updateNavbarColor);
         };
     });
+
+    const logout = () => {
+        setAuthenticated(false);
+        signOutOfGoogle();
+        Redirect("/home");
+    }
+
     return (
         <Navbar
             className={classnames("fixed-top", navbarColor)}
@@ -107,14 +129,25 @@ function MainNavbar() {
                             </NavLink>
                         </NavItem> */}
                         <NavItem>
+                            {!authenticated ?
                             <Button
                                 className="btn-round"
                                 color="info"
                                 to="/login"
                                 tag={Link}
                             >
-                                <i className="nc-icon nc-spaceship"></i> Login
+                                <i className="nc-icon nc-spaceship"></i> 
+                                {loginText}
                             </Button>
+                            : <Button
+                                className="btn-round"
+                                color="info"
+                                onClick={logout}
+                            >
+                                <i className="nc-icon nc-spaceship"></i> 
+                                {loginText}
+                            </Button>
+                        }
                         </NavItem>
                     </Nav>
                 </Collapse>

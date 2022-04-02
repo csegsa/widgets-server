@@ -1,26 +1,12 @@
 import React from "react";
 
-import { Redirect, useHistory } from "react-router-dom";
 // reactstrap components
 import { Button, Card, Form, Input, Container, Row, Col } from "reactstrap";
 
 // core components
 import MainNavbar from "components/Navbars/MainNavbar.js";
 
-import { auth, signInWithGoogle } from './Firebase';
-import { useAuthState } from "react-firebase-hooks/auth";
-
 function RegisterPage() {
-
-  const history = useHistory();
-
-  const login = () => {
-    signInWithGoogle();
-    // Redirect("/home");
-    // history.replace("/home");
-    history.goBack();
-}
-
   document.documentElement.classList.remove("nav-open");
   React.useEffect(() => {
     document.body.classList.add("register-page");
@@ -39,23 +25,36 @@ function RegisterPage() {
         }}
       >
         <div className="filter" />
-
         <Container>
           <Row>
             <Col className="ml-auto mr-auto" lg="4">
               <Card className="card-register ml-auto mr-auto">
                 <h3 className="title mx-auto">Welcome</h3>
                 <div className="social-line text-center">
-                  
+                  <Button
+                    className="btn-neutral btn-just-icon mr-1"
+                    color="facebook"
+                    href="#pablo"
+                    onClick={(e) => e.preventDefault()}
+                  >
+                    <i className="fa fa-facebook-square" />
+                  </Button>
                   <Button
                     className="btn-neutral btn-just-icon mr-1"
                     color="google"
-                    // href="#pablo"
-                    onClick={login}
+                    href="#pablo"
+                    onClick={(e) => e.preventDefault()}
                   >
                     <i className="fa fa-google-plus" />
                   </Button>
-                  
+                  <Button
+                    className="btn-neutral btn-just-icon"
+                    color="twitter"
+                    href="#pablo"
+                    onClick={(e) => e.preventDefault()}
+                  >
+                    <i className="fa fa-twitter" />
+                  </Button>
                 </div>
                 <Form className="register-form">
                   <label>Email</label>
@@ -80,7 +79,6 @@ function RegisterPage() {
             </Col>
           </Row>
         </Container>
-      
         <div className="footer register-footer text-center">
           <h6>
             © {new Date().getFullYear()}, made with{" "}
