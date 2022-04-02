@@ -15,7 +15,7 @@ import {
 // core components
 import MainNavbar from "components/Navbars/MainNavbar.js";
 import JobPostingHeader from "components/Headers/JobPostingHeader";
-import DemoFooter from "components/Footers/DemoFooter.js";
+import MainFooter from "components/Footers/MainFooter";
 
 function JobPostings() {
   document.documentElement.classList.remove("nav-open");
@@ -201,7 +201,7 @@ function JobPostings() {
           </Container>
         </div>
       </div>
-      <DemoFooter />
+      <MainFooter />
     </>
   );
 }

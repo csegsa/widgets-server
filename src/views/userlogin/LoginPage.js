@@ -5,6 +5,7 @@ import { Button, Card, Form, Input, Container, Row, Col } from "reactstrap";
 
 // core components
 import MainNavbar from "components/Navbars/MainNavbar.js";
+import backgroundImage from "assets/img/csegsa/Academic.JPG";
 
 function RegisterPage() {
   document.documentElement.classList.remove("nav-open");
@@ -21,7 +22,7 @@ function RegisterPage() {
         className="page-header"
         style={{
           backgroundImage:
-            "url(" + require("assets/img/login-image.jpg").default + ")",
+            "url(" + backgroundImage + ")",
         }}
       >
         <div className="filter" />
@@ -62,12 +63,21 @@ function RegisterPage() {
                   <label>Password</label>
                   <Input placeholder="Password" type="password" />
                   <Button block className="btn-round" color="danger">
-                    Register
+                    Login
                   </Button>
                 </Form>
                 <div className="forgot">
                   <Button
                     className="btn-link"
+                    color="danger"
+                    href="#pablo"
+                    onClick={(e) => e.preventDefault()}
+                  >
+                    Register new account?
+                  </Button>
+                  <Button
+                    className="btn-link"
+                    style={{marginTop: "0px"}}
                     color="danger"
                     href="#pablo"
                     onClick={(e) => e.preventDefault()}
@@ -81,8 +91,7 @@ function RegisterPage() {
         </Container>
         <div className="footer register-footer text-center">
           <h6>
-            © {new Date().getFullYear()}, made with{" "}
-            <i className="fa fa-heart heart" /> by Creative Tim
+            © {new Date().getFullYear()}, CSEGSA, all rights reserved.
           </h6>
         </div>
       </div>
