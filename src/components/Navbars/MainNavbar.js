@@ -79,16 +79,21 @@ function MainNavbar() {
                                 Login
                             </NavLink>
                         </NavItem> */}
-            <NavItem>
-              <Button className='btn-round' color='info' to='/login' tag={Link}>
-                <i className='nc-icon nc-spaceship'></i> Login
-              </Button>
-            </NavItem>
-          </Nav>
-        </Collapse>
-      </Container>
-    </Navbar>
-  )
+                        <NavItem>
+                            <Button
+                                className="btn-round"
+                                color="info"
+                                to="/login"
+                                tag={Link}
+                            >
+                                <i className="nc-icon nc-single-02"></i> Login
+                            </Button>
+                        </NavItem>
+                    </Nav>
+                </Collapse>
+            </Container>
+        </Navbar>
+    );
 }
 
 export default MainNavbar

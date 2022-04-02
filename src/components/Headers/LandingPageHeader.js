@@ -1,7 +1,7 @@
 import React from "react"
 
 // reactstrap components
-import { Container } from "reactstrap"
+import { Container,Button } from "reactstrap";
 import backgroundImage from "assets/img/csegsa/Academic.JPG"
 // core components
 
@@ -33,11 +33,12 @@ function LandingPageHeader() {
       >
         <div className='filter' />
         <Container>
-          <div className='motto text-center'>
-            <h1>
-              <b>CSEGSA</b>
-            </h1>
-            <h3>The graduate community of scholars</h3>
+          <div className="motto text-center">
+            <h1><b>CSEGSA</b></h1>
+            <h3><b>Computer Science and Engineering Graduate Student Association</b></h3>
+            <Button className="btn-round" color="danger" href="#about">
+                        Learn More
+            </Button>
           </div>
         </Container>
       </div>
