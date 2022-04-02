@@ -14,25 +14,30 @@ function MainFooter() {
                         <nav className="footer-nav">
                             <img src={Logo} alt={"csegsa_logo"} style={{ width: 400 }} />
                         </nav>
-                        <div className="credits ml-auto" style={{}}>
-                            <span className="copyright">
-                                © {new Date().getFullYear()}, CSEGSA, all rights reserved.
-                            </span>
-                        </div>
                     </Col>
                     <Col md="6">
                         <nav className="">
                             <div>
-                                <div>
+                                <div style={{fontSize:"20px", fontWeight:"700", marginTop:"10px"}}>Follow us</div>
+                                {/* <div>
+                                
                                     <span style={{fontSize:"20px", fontWeight:"500", lineHeight: "45px"}}>Follow us</span>
-                                </div>
+                                </div> */}
                                 <div>
-                                    <span>
+                                    <span style={{marginRight:"20px"}}>
                                         <a
                                             href="https://www.creative-tim.com?ref=pkr-footer"
                                             target="_blank"
                                         >
-                                            <i className="fa fa-twitter" />
+                                            <i className="fa fa-twitter fa-2x" />
+                                        </a>
+                                    </span>
+                                    <span style={{marginRight:"20px"}}>
+                                        <a
+                                            href="https://www.creative-tim.com?ref=pkr-footer"
+                                            target="_blank"
+                                        >
+                                            <i className="fa fa-linkedin fa-2x" />
                                         </a>
                                     </span>
                                     <span>
@@ -40,20 +45,19 @@ function MainFooter() {
                                             href="https://www.creative-tim.com?ref=pkr-footer"
                                             target="_blank"
                                         >
-                                            <i className="fa fa-linkedin" />
-                                        </a>
-                                    </span>
-                                    <span>
-                                        <a
-                                            href="https://www.creative-tim.com?ref=pkr-footer"
-                                            target="_blank"
-                                        >
-                                            <i className="fa fa-twitter" />
+                                            <i className="fa fa-twitter fa-2x" />
                                         </a>
                                     </span>
                                 </div>
                             </div>
                         </nav>
+                    </Col>
+                    <Col md="6">
+                        {/* <div className="credits ml-auto" style={{}}> */}
+                            <span className="copyright" style={{fontSize:"16px", fontWeight:"400"}}>
+                                © {new Date().getFullYear()}, CSEGSA, all rights reserved.
+                            </span>
+                        {/* </div> */}
                     </Col>
                 </Row>
             </Container>

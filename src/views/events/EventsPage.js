@@ -13,7 +13,7 @@ import dayGridPlugin from '@fullcalendar/daygrid' // a plugin!
 // core components
 import MainNavbar from "components/Navbars/MainNavbar.js";
 import EventPageHeader from "components/Headers/EventPageHeader";
-import DemoFooter from "components/Footers/DemoFooter.js";
+import MainFooter from "components/Footers/MainFooter";
 
 function EventsPage() {
   document.documentElement.classList.remove("nav-open");
@@ -41,7 +41,7 @@ function EventsPage() {
           </Container>
         </div>
       </div>
-      <DemoFooter />
+      <MainFooter />
     </>
   );
 }

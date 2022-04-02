@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { HashLink } from 'react-router-hash-link';
 // nodejs library that concatenates strings
 import classnames from "classnames";
 
@@ -97,7 +98,7 @@ function MainNavbar() {
                             </NavLink>
                         </NavItem>
                         <NavItem>
-                            <NavLink to="/home/#contact" tag={Link}>
+                            <NavLink to="/home/#contact" tag={HashLink}>
                                 Contact Us
                             </NavLink>
                         </NavItem>
