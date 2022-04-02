@@ -19,8 +19,6 @@ import ProfilePage from "views/examples/ProfilePage.js";
 import RegisterPage from "views/examples/RegisterPage.js";
 // others
 
-import { auth } from './views/userlogin/Firebase';
-
 ReactDOM.render(
 
   <BrowserRouter>

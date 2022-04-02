@@ -1,11 +1,12 @@
-import React from "react";
+import React from "react"
 
 import { Redirect, useHistory } from "react-router-dom";
 // reactstrap components
-import { Button, Card, Form, Input, Container, Row, Col } from "reactstrap";
+import { Button, Card, Form, Input, Container, Row, Col } from "reactstrap"
 
 // core components
-import MainNavbar from "components/Navbars/MainNavbar.js";
+import MainNavbar from "components/Navbars/MainNavbar.js"
+import backgroundImage from "assets/img/csegsa/Academic.JPG"
 
 import { auth, signInWithGoogle } from './Firebase';
 import { useAuthState } from "react-firebase-hooks/auth";
@@ -23,19 +24,18 @@ function RegisterPage() {
 
   document.documentElement.classList.remove("nav-open");
   React.useEffect(() => {
-    document.body.classList.add("register-page");
+    document.body.classList.add("register-page")
     return function cleanup() {
-      document.body.classList.remove("register-page");
-    };
-  });
+      document.body.classList.remove("register-page")
+    }
+  })
   return (
     <>
       <MainNavbar />
       <div
-        className="page-header"
+        className='page-header'
         style={{
-          backgroundImage:
-            "url(" + require("assets/img/login-image.jpg").default + ")",
+          backgroundImage: "url(" + backgroundImage + ")"
         }}
       >
         <div className="filter" />
@@ -53,25 +53,34 @@ function RegisterPage() {
                     // href="#pablo"
                     onClick={login}
                   >
-                    <i className="fa fa-google-plus" />
+                    <i className='fa fa-google-plus' />
                   </Button>
                   
                 </div>
-                <Form className="register-form">
+                <Form className='register-form'>
                   <label>Email</label>
-                  <Input placeholder="Email" type="text" />
+                  <Input placeholder='Email' type='text' />
                   <label>Password</label>
-                  <Input placeholder="Password" type="password" />
-                  <Button block className="btn-round" color="danger">
-                    Register
+                  <Input placeholder='Password' type='password' />
+                  <Button block className='btn-round' color='danger'>
+                    Login
                   </Button>
                 </Form>
-                <div className="forgot">
+                <div className='forgot'>
                   <Button
-                    className="btn-link"
-                    color="danger"
-                    href="#pablo"
-                    onClick={(e) => e.preventDefault()}
+                    className='btn-link'
+                    color='danger'
+                    href='#pablo'
+                    onClick={e => e.preventDefault()}
+                  >
+                    Register new account?
+                  </Button>
+                  <Button
+                    className='btn-link'
+                    style={{ marginTop: "0px" }}
+                    color='danger'
+                    href='#pablo'
+                    onClick={e => e.preventDefault()}
                   >
                     Forgot password?
                   </Button>
@@ -80,16 +89,12 @@ function RegisterPage() {
             </Col>
           </Row>
         </Container>
-      
-        <div className="footer register-footer text-center">
-          <h6>
-            © {new Date().getFullYear()}, made with{" "}
-            <i className="fa fa-heart heart" /> by Creative Tim
-          </h6>
+        <div className='footer register-footer text-center'>
+          <h6>© {new Date().getFullYear()}, CSEGSA, all rights reserved.</h6>
         </div>
       </div>
     </>
-  );
+  )
 }
 
-export default RegisterPage;
+export default RegisterPage

@@ -21,7 +21,8 @@
     "react-dom": "17.0.2",
     "react-firebase-hooks": "^5.0.3",
     "react-router": "5.2.0",
-    "react-router-dom": "^5.2.0",
+    "react-router-dom": "5.2.0",
+    "react-router-hash-link": "^2.4.3",
     "react-scripts": "^5.0.0",
     "reactstrap": "8.9.0"
   },
@@ -33,7 +34,10 @@
     "install:clean": "rm -rf node_modules/ && rm -rf package-lock.json && npm install && npm start",
     "compile-sass": "node-sass src/assets/scss/paper-kit.scss src/assets/css/paper-kit.css",
     "minify-sass": "node-sass src/assets/scss/paper-kit.scss src/assets/css/paper-kit.min.css --output-style compressed",
-    "map-sass": "node-sass src/assets/scss/paper-kit.scss src/assets/css/paper-kit.css --source-map true"
+    "map-sass": "node-sass src/assets/scss/paper-kit.scss src/assets/css/paper-kit.css --source-map true",
+    "lint": "eslint .",
+    "lint:fix": "eslint --fix",
+    "format": "prettier --write './**/*.{js,jsx,ts,tsx,css,md,json}' --config ./.prettierrc.json"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -56,8 +60,14 @@
   },
   "devDependencies": {
     "bootstrap": "4.6.0",
+    "eslint": "^8.12.0",
+    "eslint-config-google": "^0.14.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-react": "^7.29.4",
     "gulp": "^3.9.1",
-    "gulp-append-prepend": "1.0.8"
+    "gulp-append-prepend": "1.0.8",
+    "prettier": "^2.6.2"
   },
   "description": "CSEGSA Portal - Official Computer Science and Engineering Graduate Student Association portal.",
   "main": "src/assets/scss/paper-kit.scss",

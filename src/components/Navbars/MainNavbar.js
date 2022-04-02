@@ -2,31 +2,23 @@ import React from "react";
 import { Link, Redirect, useHistory } from "react-router-dom";
 import { auth, signOutOfGoogle } from '../../views/userlogin/Firebase';
 import { useAuthState } from "react-firebase-hooks/auth";
+import { HashLink } from "react-router-hash-link"
 // nodejs library that concatenates strings
-import classnames from "classnames";
+import classnames from "classnames"
 
 // reactstrap components
-import {
-    Collapse,
-    NavbarBrand,
-    Navbar,
-    NavItem,
-    NavLink,
-    Nav,
-    Container,
-    Button,
-} from "reactstrap";
+import { Collapse, NavbarBrand, Navbar, NavItem, NavLink, Nav, Container, Button } from "reactstrap"
 
-import Logo from "../../assets/img/csegsa/csegsa.webp" ;
+import Logo from "../../assets/img/csegsa/csegsa.webp"
 
 function MainNavbar() {
-    const [navbarColor, setNavbarColor] = React.useState("navbar-transparent");
-    const [navbarCollapse, setNavbarCollapse] = React.useState(false);
+  const [navbarColor, setNavbarColor] = React.useState("navbar-transparent")
+  const [navbarCollapse, setNavbarCollapse] = React.useState(false)
 
-    const toggleNavbarCollapse = () => {
-        setNavbarCollapse(!navbarCollapse);
-        document.documentElement.classList.toggle("nav-open");
-    };
+  const toggleNavbarCollapse = () => {
+    setNavbarCollapse(!navbarCollapse)
+    document.documentElement.classList.toggle("nav-open")
+  }
 
     const [user, loading, error] = useAuthState(auth);
     const [authenticated, setAuthenticated] = React.useState(false);
@@ -56,7 +48,7 @@ function MainNavbar() {
             }
         };
 
-        window.addEventListener("scroll", updateNavbarColor);
+    window.addEventListener("scroll", updateNavbarColor)
 
         return function cleanup() {
             window.removeEventListener("scroll", updateNavbarColor);
@@ -119,7 +111,7 @@ function MainNavbar() {
                             </NavLink>
                         </NavItem>
                         <NavItem>
-                            <NavLink to="/home/#contact" tag={Link}>
+                            <NavLink to="/home/#contact" tag={HashLink}>
                                 Contact Us
                             </NavLink>
                         </NavItem>
@@ -144,8 +136,7 @@ function MainNavbar() {
                                 color="info"
                                 onClick={logout}
                             >
-                                <i className="nc-icon nc-spaceship"></i> 
-                                {loginText}
+                                <i className="nc-icon nc-single-02"></i> {loginText}
                             </Button>
                         }
                         </NavItem>
@@ -156,4 +147,4 @@ function MainNavbar() {
     );
 }
 
-export default MainNavbar;
+export default MainNavbar
