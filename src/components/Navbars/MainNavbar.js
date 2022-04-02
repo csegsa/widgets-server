@@ -114,7 +114,7 @@ function MainNavbar() {
                                 to="/login"
                                 tag={Link}
                             >
-                                <i className="nc-icon nc-spaceship"></i> Login
+                                <i className="nc-icon nc-single-02"></i> Login
                             </Button>
                         </NavItem>
                     </Nav>
