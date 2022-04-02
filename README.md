@@ -9,6 +9,7 @@
 ## File Structure
 
 Within the download you'll find the following directories and files:
+
 ```
 paper-kit-react
 .
@@ -65,7 +66,7 @@ paper-kit-react
         │   ├── LoginPage.js
         │   └── RegisterPage.js
         └── index-sections
-            
+
 ```
 
 ## Browser Support
