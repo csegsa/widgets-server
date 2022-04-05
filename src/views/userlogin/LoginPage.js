@@ -1,4 +1,4 @@
-import React from "react"
+import React from "react";
 
 import { Redirect, useHistory } from "react-router-dom";
 // reactstrap components
@@ -10,17 +10,76 @@ import backgroundImage from "assets/img/csegsa/Academic.JPG"
 
 import { auth, signInWithGoogle } from './Firebase';
 import { useAuthState } from "react-firebase-hooks/auth";
+import { onAuthStateChanged, signInWithEmailAndPassword } from "firebase/auth";
 
 function RegisterPage() {
 
+  const [email, setEmail] = React.useState("");
+  const [password, setPassword] = React.useState("");
+  const [emailError, setEmailError] = React.useState("");
+  const [passwordError, setPasswordError] = React.useState("");
+  // const [user, setUser] = React.useState("");
+
+  const clearErrors = () => {
+    setEmailError("");
+    setPasswordError("");
+  }
+
+  const clearInputs = () => {
+    setEmail("");
+    setPassword("");
+  }
+
+  // React.useEffect(() => {
+  //   authListener();
+  // }, []);
+
   const history = useHistory();
+
+  // const authListener = () => {
+  //   onAuthStateChanged(user => {
+  //     if (user) {
+  //       setUser(user);
+  //     } else {
+  //       setUser("");
+  //     }
+  //   })
+  // }
+
+  const handleLoginWithEmailAndPassword = () => {
+    clearErrors();
+    signInWithEmailAndPassword(auth, email, password)
+    // .then((userCredential) => {
+    //   // Signed in 
+    //   const user = userCredential.user;
+    //   setUser(user);
+    //   // ...
+    // })
+    .catch( err=> {
+      switch(err.code){
+        case "auth/invalid-email":
+          setEmailError(err.message);
+          break;
+        case "auth/user-disabled":
+        case "auth/user-not-found":
+          setEmailError(err.message);
+          break;
+        case "auth/wrong-password":
+          setPasswordError(err.message);
+          break;
+      }
+    });
+
+    history.goBack();
+  }
+
 
   const login = () => {
     signInWithGoogle();
     // Redirect("/home");
     // history.replace("/home");
     history.goBack();
-}
+  }
 
   document.documentElement.classList.remove("nav-open");
   React.useEffect(() => {
@@ -59,11 +118,21 @@ function RegisterPage() {
                 </div>
                 <Form className='register-form'>
                   <label>Email</label>
-                  <Input placeholder='Email' type='text' />
+                  <Input placeholder='Email' type='text' 
+                    onChange={e => setEmail(e.target.value)}
+                  />
+                  {emailError !== "" && <span>{emailError}</span>}
+                  
                   <label>Password</label>
-                  <Input placeholder='Password' type='password' />
-                  <Button block className='btn-round' color='danger'>
-                    Login
+                  <Input placeholder='Password' type='password' 
+                    onChange={e => setPassword(e.target.value)}
+                  />
+                  {passwordError !== "" && <span>{passwordError}</span>}
+
+                  <Button block className='btn-round' color='danger'
+                    onClick={handleLoginWithEmailAndPassword}
+                  >
+                    Login here
                   </Button>
                 </Form>
                 <div className='forgot'>

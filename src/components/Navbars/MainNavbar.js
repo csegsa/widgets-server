@@ -26,6 +26,7 @@ function MainNavbar() {
 
     React.useEffect(() => {
         if (user) {
+            console.log(user);
             setAuthenticated(true);
             setLoginText("Log Out");
         } else {
