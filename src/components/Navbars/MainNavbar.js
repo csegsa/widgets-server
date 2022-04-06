@@ -12,13 +12,14 @@ import { Collapse, NavbarBrand, Navbar, NavItem, NavLink, Nav, Container, Button
 import Logo from "../../assets/img/csegsa/csegsa.webp"
 
 function MainNavbar() {
-  const [navbarColor, setNavbarColor] = React.useState("navbar-transparent")
-  const [navbarCollapse, setNavbarCollapse] = React.useState(false)
+    const [navbarColor, setNavbarColor] = React.useState("navbar-transparent")
+    const [navbarCollapse, setNavbarCollapse] = React.useState(false);
+    const [email, setEmail] = React.useState("");
 
-  const toggleNavbarCollapse = () => {
-    setNavbarCollapse(!navbarCollapse)
-    document.documentElement.classList.toggle("nav-open")
-  }
+    const toggleNavbarCollapse = () => {
+        setNavbarCollapse(!navbarCollapse)
+        document.documentElement.classList.toggle("nav-open")
+    }
 
     const [user, loading, error] = useAuthState(auth);
     const [authenticated, setAuthenticated] = React.useState(false);
@@ -27,9 +28,11 @@ function MainNavbar() {
     React.useEffect(() => {
         if (user) {
             console.log(user);
+            setEmail(user.email);
             setAuthenticated(true);
-            setLoginText("Log Out");
+            setLoginText(user.email +" (Log Out)");
         } else {
+            setEmail("");
             setLoginText("Log In");
         }
     }, [user]);
