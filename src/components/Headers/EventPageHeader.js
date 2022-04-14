@@ -41,4 +41,4 @@ function EventPageHeader() {
   )
 }
 
-export default EventPageHeader
+export default EventPageHeader ;
